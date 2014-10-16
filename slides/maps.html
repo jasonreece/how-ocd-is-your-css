@@ -1,0 +1,28 @@
+<h2>sass-<span class="t-color-yellow">maps</span></h2>
+<pre>
+  <code class="scss">
+    // Set up the colors in a way that will make sense to you
+    $human-readable-colors: (
+      'color-yellow': #e7ad10,
+      'color-orange': #d8531e,
+      'color-green': #747501
+    );
+
+    // Then set up the project variables
+    $project-scalable-colors: (
+      'color-primary': map-get($human-readable-colors, 'color-yellow'),
+      'color-secondary': map-get($human-readable-colors, 'color-orange'),
+      'color-tertiary': map-get($human-readable-colors, 'color-green')
+    );
+
+    // Using the $project-scalable map
+    .t-color-primary {
+      color: map-get($project-scalable-colors, color-primary);
+    }
+
+    // Outputted CSS
+    .t-color-primary {
+      color: #e7ad10;
+    }
+  </code>
+</pre>

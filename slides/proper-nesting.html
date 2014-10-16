@@ -1,0 +1,37 @@
+<h2>better-<span class="t-color-yellow">nesting</span></h2>
+
+<pre class="l-grid-half scss">
+  <code>
+    // This is better.
+    li {
+      float: left;
+      margin: 0 1em;
+      padding: 2em;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS
+    li {
+      float: left;
+      margin: 0 1em;
+      padding: 2em;
+    }
+
+    li:first-child {
+      margin-left: 0;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+  </code>
+</pre>

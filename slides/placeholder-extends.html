@@ -1,0 +1,41 @@
+<h2>sass-<span class="t-color-yellow">placeholder</span>-extends</h2>
+
+<pre class="l-grid-half scss">
+  <code>
+    // @extend with placeholder syntax
+    %center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container-one {
+      @extend %center;
+      background: red;
+    }
+
+    .container-two {
+      @extend %center;
+      background: blue;
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS - Much DRYer!
+    .container-one, .container-two {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container-one {
+      background: red;
+    }
+
+    .container-two {
+      background: blue;
+    }
+  </code>
+</pre>

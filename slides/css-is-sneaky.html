@@ -1,0 +1,49 @@
+<section>
+<h1>css-is-<span class="t-color-yellow">sneaky</span></h1>
+
+<ul>
+  <li>As projects scale, CSS changes become more difficult.</li>
+  <li>Styles need to become more specific.</li>
+  <li>Refactoring becomes scary.</li>
+  <li>Writing CSS vs. Architecting CSS</li>
+
+  <!--
+
+  OOCSS made architecting easier
+
+  Preprocessors make architecting easier
+
+  Start with Reset.  Get project looking nice.  Then need to make a change.  Stick it at the bottom.  Down the road, there is more at the bottom than at the top.  Would like to refactor, but afraid to break things!
+
+  Sass Partials. -->
+
+
+
+</ul>
+
+<pre>
+  <code class="css">
+    /* Just stick this at the bottom of the file.
+       If nothing breaks, we're ok! */
+
+    .i-better-be .really-specific .to-make-sure .this-overrides  nav ul li {
+      float: left !important;
+    }
+  </code>
+</pre>
+</section>
+
+<section>
+  <blockquote>
+    <p>[CSS is] <cite class="from-quote">an old, loose, leaky, globally operating, inheritance based, language which is entirely dependent on source order, except when you introduce its own worst feature: specificity.</cite></p>
+    <p>- Harry Roberts, CSS Wizardry</p>
+  </blockquote>
+</section>
+
+<section>
+  Organized
+  Componetized
+  Decoupled
+</section>
+
+

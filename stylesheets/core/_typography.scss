@@ -1,0 +1,22 @@
+// -------------------------------------
+//   Typography
+// -------------------------------------
+// ----- Global typography classes
+// -------------------------------------
+
+$type-colors: (
+  'color-yellow': $color-yellow,
+  'color-orange': $color-orange,
+  'color-green': $color-green
+);
+
+@each $color, $hex in $type-colors  {
+  .reveal .t-#{$color} {
+    color: #{$hex};
+  }
+}
+
+.reveal .t-burrito {
+  font-size: 16px;
+  line-height: 16px;
+}

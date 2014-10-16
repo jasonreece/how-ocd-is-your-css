@@ -1,0 +1,40 @@
+<h2>sass-<span class="t-color-yellow">mixins</span></h2>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Rem sizing @mixin with px fallback.
+    @mixin rem-sizing($property, $size) {
+      #{$property}: $size * 10px;
+      #{$property}: $size * 1rem;
+    }
+
+    // not needed for the mixin example,
+    // but makes 10px = 1rem
+    html { font-size: 62.5%; }
+
+    // Using the @mixin
+    h2 {
+      @include rem-sizing(font-size, 3.0);
+      @include rem-sizing(line-height, 4.5);
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS
+    html {
+      font-size: 62.5%;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-size: 3rem;
+      line-height: 45px;
+      line-height: 4.5rem;
+    }
+  </code>
+</pre>
+
+
+

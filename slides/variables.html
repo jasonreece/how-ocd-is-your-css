@@ -1,0 +1,29 @@
+<h2>sass-<span class="t-color-yellow">variables</span></h2>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Easily undestandable variables
+    $color-yellow: #e7ad10;
+    $color-orange: #d8531e;
+    $color-green: #747501;
+
+    // Set to more scalable variables
+    $color-primary: $color-yellow;
+    $color-secondary: $color-orange;
+    $color-tertiary: $color-green;
+
+    // Using the variable
+    .t-color-primary {
+      color: $color-primary;
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS
+    .t-color-primary {
+      color: #e7ad10;
+    }
+  </code>
+</pre>

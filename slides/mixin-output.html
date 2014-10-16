@@ -1,0 +1,37 @@
+<h2>watch-your-mixin-<span class="t-color-yellow">output</span>!</h2>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Dont do this!
+    @mixin center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container-one {
+      @include center;
+    }
+
+    .container-two {
+      @include center;
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS gets duplicated
+    .container-one {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container-two {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </code>
+</pre>

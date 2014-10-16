@@ -1,0 +1,27 @@
+<h2>advanced-<span class="t-color-yellow">functions</span></h2>
+
+<pre>
+  <code class="scss ">
+    // map of colors
+    $colors: (
+      pink: #FA6ACC,
+      red: #F02A52,
+      blue: #09A6E4
+    );
+
+    // function for colors
+    @function color($key) {
+      @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+      }
+
+      @warn "Unknown `#{$key}` in $colors.";
+      @return null;
+    }
+
+    // Using the function
+    div {
+      background: color(blue); // #09A6E4
+    }
+  </code>
+</pre>

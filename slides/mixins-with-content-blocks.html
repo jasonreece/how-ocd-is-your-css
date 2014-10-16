@@ -1,0 +1,72 @@
+<section>
+  <h1>sass-<span class="t-color-yellow">content-blocks</span></h1>
+  <pre class="l-grid-half scss">
+    <code>
+      // Adds responsive breakpoints.
+      @mixin breakpoint($width) {
+        @media (min-width: $width) {
+          @content;
+        }
+      }
+
+      // Nest breakpoints in rulesets
+      .l-container {
+        width: 90%;
+        @include breakpoint(768px) {
+          width: 50%;
+        }
+      }
+    </code>
+  </pre>
+
+  <pre class="l-grid-half scss">
+    <code>
+      // Outputted CSS
+      .l-container {
+        width: 90%;
+      }
+
+      @media (min-width: 768px) {
+        .l-container {
+          width: 50%;
+        }
+      }
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h1>sass-<span class="t-color-yellow">content-blocks</span></h1>
+  <pre class="l-grid-half scss">
+    <code>
+      // Another good use for @content
+      @mixin attention() {
+        &:hover,
+        &:active,
+        &:focus {
+          @content;
+        }
+      }
+
+      a {
+        color: red;
+        @include attention() {
+          color: blue;
+        }
+      }
+    </code>
+  </pre>
+
+  <pre class="l-grid-half scss">
+    <code>
+      // Outputted CSS
+      a {
+        color: red;
+      }
+
+      a:hover, a:active, a:focus {
+        color: blue;
+      }
+    </code>
+  </pre>
+</section>

@@ -1,0 +1,14 @@
+// -------------------------------------
+//   Layout
+// -------------------------------------
+// ----- Global layout classes (margin, padding, floats, etc).
+// -------------------------------------
+
+.reveal .l-grid-half {
+  float: left;
+  // margin-right: 5%;
+  width: 48%;
+  &:last-child {
+    float: right;
+  }
+}

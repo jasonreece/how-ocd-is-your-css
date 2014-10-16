@@ -1,0 +1,36 @@
+<h2><span class="t-color-yellow">each</span>-loops</h2>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Set up your $colors map
+    $colors: (
+      'color-primary': #e7ad10,
+      'color-secondary': #d8531e,
+      'color-tertiary': #747501
+    );
+
+    // Then loop through each color name and hex
+    @each $color-name, $hex in $colors {
+      .t-#{$color-name} {
+        color: $hex;
+      }
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS
+    .t-color-primary {
+      color: #e7ad10;
+    }
+
+    .t-color-secondary {
+      color: #d8531e;
+    }
+
+    .t-color-tertiary {
+      color: #747501;
+    }
+  </code>
+</pre>

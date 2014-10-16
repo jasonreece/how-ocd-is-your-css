@@ -1,0 +1,48 @@
+<h2>bad-<span class="t-color-yellow">nesting</span></h2>
+
+<ul>
+  <li>Follow the <a href="http://thesassway.com/beginner/the-inception-rule" target="_blank">inception rule.</a></li>
+</ul>
+
+<div>
+<pre class="l-grid-half scss">
+  <code>
+    // Beware of specificity
+    // from nesting too deeply!
+    nav {
+      ul {
+        li {
+          float: left;
+          a {
+            color: blue;
+            &:hover,
+            &:focus,
+            &:active {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS
+    nav ul li {
+      float: left;
+    }
+
+    nav ul li a {
+      color: blue;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus,
+    nav ul li a:active {
+      color: red;
+    }
+  </code>
+</pre>
+</div>

@@ -1,0 +1,47 @@
+<h2>nested-<span class="t-color-yellow">each</span>-loops</h2>
+<pre>
+  <code class="scss">
+    // Bulletproof @font-face
+    // http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/
+
+    // Set up nested $fonts map
+    $fonts: (
+      'font-group-one': ('font-name-light', 'font-name-dark'),
+      'font-group-two': ('font-name-light','font-name-medium')
+    );
+
+    // Loop through each font group, then loop through each font name in that group.
+    @each $font-group, $font-names in $fonts {
+      @each $font-name in $font-names {
+        @font-face {
+          name: $font-name;
+          src:
+            url('/path/to/fonts/#{$font-group}/#{$font-name}.eot?#iefix') format('embedded-opentype'),
+            url('/path/to/fonts/#{$font-group}/#{$font-name}.woff') format('woff'),
+            url('/path/to/fonts/#{$font-group}/#{$font-name}.ttf') format('truetype'),
+            url('/path/to/fonts/#{$font-group}/#{$font-name}.svg##{$font-name}') format('svg');
+        }
+      }
+    }
+
+    // Outputted CSS &#x25BE;
+    @font-face {
+      name: "font-name-light";
+      src: url("/path/to/fonts/font-group-one/font-name-light.eot?#iefix") format("embedded-opentype"), url("/path/to/fonts/font-group-one/font-name-light.woff") format("woff"), url("/path/to/fonts/font-group-one/font-name-light.ttf") format("truetype"), url("/path/to/fonts/font-group-one/font-name-light.svg#font-name-light") format("svg");
+    }
+
+    @font-face {
+      name: "font-name-dark";
+      src: url("/path/to/fonts/font-group-one/font-name-dark.eot?#iefix") format("embedded-opentype"), url("/path/to/fonts/font-group-one/font-name-dark.woff") format("woff"), url("/path/to/fonts/font-group-one/font-name-dark.ttf") format("truetype"), url("/path/to/fonts/font-group-one/font-name-dark.svg#font-name-dark") format("svg");
+    }
+
+    @font-face {
+      name: "font-name-light";
+      src: url("/path/to/fonts/font-group-two/font-name-light.eot?#iefix") format("embedded-opentype"), url("/path/to/fonts/font-group-two/font-name-light.woff") format("woff"), url("/path/to/fonts/font-group-two/font-name-light.ttf") format("truetype"), url("/path/to/fonts/font-group-two/font-name-light.svg#font-name-light") format("svg");
+    }
+
+    @font-face {
+      name: "font-name-medium";
+      src: url("/path/to/fonts/font-group-two/font-name-medium.eot?#iefix") format("embedded-opentype"), url("/path/to/fonts/font-group-two/font-name-medium.woff") format("woff"), url("/path/to/fonts/font-group-two/font-name-medium.ttf") format("truetype"), url("/path/to/fonts/font-group-two/font-name-medium.svg#font-name-medium") format("svg");
+  </code>
+</pre>

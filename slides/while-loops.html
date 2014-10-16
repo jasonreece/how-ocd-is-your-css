@@ -1,0 +1,36 @@
+<h2><span class="t-color-yellow">while</span>-loops</h2>
+
+<pre class="l-grid-half scss">
+  <code>
+    $i: 12;
+    // Create a 12 column grid
+    @while $i > 0 {
+      %l-grid-#{$i} {
+        width: ($i/12) * 100%;
+      }
+      $i: $i - 1;
+    }
+
+    // Extend the placeholders
+    .l-container-left {
+      @extend %l-grid-9;  // (9/12) * 100% = 75%
+    }
+
+    .l-container-right {
+      @extend %l-grid-3;  // (3/12) * 100% = 25%
+    }
+  </code>
+</pre>
+
+<pre class="l-grid-half scss">
+  <code>
+    // Outputted CSS
+    .l-container-left {
+      width: 75%;
+    }
+
+    .l-container-right {
+      width: 25%;
+    }
+  </code>
+</pre>
